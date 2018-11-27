@@ -1,4 +1,4 @@
-package com.heartiger;
+package com.heartiger.challenges;
 
 /*
 
