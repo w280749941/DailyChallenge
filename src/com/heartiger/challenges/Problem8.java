@@ -16,7 +16,7 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 
 */
 
-public class ClimbStairs {
+public class Problem8 {
 
     private int climb(int stair, int[] steps){
         int dp[] = new int[stair+1];
@@ -44,7 +44,7 @@ public class ClimbStairs {
     }
 
     public static void main(String[] args) {
-        ClimbStairs climbStairs = new ClimbStairs();
+        Problem8 climbStairs = new Problem8();
 
         int stairs = 4;
         assert climbStairs.climb(stairs, new int[]{1,2}) == 5: "Test";
