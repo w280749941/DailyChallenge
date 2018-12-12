@@ -1,12 +1,11 @@
 package com.heartiger.utils;
 
-import java.util.HashMap;
-import java.util.Map;
+public class ListNode {
+    public int val;
+    public ListNode next;
 
-public class ListNode{
-    boolean isWord;
-    Map<Character, ListNode> next;
-    ListNode() {
-        next = new HashMap<>();
+    public ListNode(int val, ListNode node){
+        this.val = val;
+        this.next = node;
     }
 }

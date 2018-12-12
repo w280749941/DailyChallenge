@@ -6,15 +6,15 @@ import java.util.Map;
 
 public class Trie {
 
-    private ListNode root;
+    private TrieNode root;
     private int size;
 
     public Trie(){
-        this.root = new ListNode();
+        this.root = new TrieNode();
     }
 
     public Trie(String[] dataSource){
-        this.root = new ListNode();
+        this.root = new TrieNode();
         for(String data: dataSource){
             this.add(data);
         }
@@ -26,26 +26,26 @@ public class Trie {
     }
 
     /** Return the root of current Trie */
-    public ListNode getRoot(){
+    public TrieNode getRoot(){
         return this.root;
     }
 
     /** Return whether current Trie contains a word */
     public boolean contains(String word){
-        ListNode node = this.getNodeContainsPrefix(word);
+        TrieNode node = this.getNodeContainsPrefix(word);
         return node != null && node.isWord;
     }
 
     /** Add a word to current Trie */
     public void add(String word){
         if(word == null) return;
-        ListNode node = this.root;
+        TrieNode node = this.root;
 
         // For each letter, if current node doesn't have a path
         // Create a new node. and move pointer to that node.
         for(int i=0; i<word.length(); i++){
             char letter = Character.toLowerCase(word.charAt(i));
-            node.next.putIfAbsent(letter, new ListNode());
+            node.next.putIfAbsent(letter, new TrieNode());
             node = node.next.get(letter);
         }
 
@@ -61,9 +61,9 @@ public class Trie {
         return this.getNodeContainsPrefix(word) != null;
     }
 
-    private ListNode getNodeContainsPrefix(String word){
+    private TrieNode getNodeContainsPrefix(String word){
         if(word == null) return null;
-        ListNode node = this.root;
+        TrieNode node = this.root;
 
         // If current node doesn't contains a path to a letter return null
         // Otherwise move pointer to next node.
@@ -83,13 +83,13 @@ public class Trie {
         return this.blurrySearch(this.root, word, 0);
     }
 
-    private boolean blurrySearch(ListNode root, String word, int index) {
+    private boolean blurrySearch(TrieNode root, String word, int index) {
         if(word == null) return false;
 
         if(index == word.length() && root.isWord)
             return true;
 
-        ListNode node = root;
+        TrieNode node = root;
         for(int i=index; i<word.length(); i++){
             char letter = Character.toLowerCase(word.charAt(i));
             if(letter != '.'){
@@ -97,7 +97,7 @@ public class Trie {
                     return false;
                 node = node.next.get(letter);
             } else{
-                for(ListNode item: node.next.values()){
+                for(TrieNode item: node.next.values()){
                     if(blurrySearch(item, word, i+1)){
                         return true;
                     }
@@ -115,14 +115,14 @@ public class Trie {
         return result;
     }
 
-    private void getBlurrySearchResult(ListNode root, String word, int index, List<String> lt, String s) {
+    private void getBlurrySearchResult(TrieNode root, String word, int index, List<String> lt, String s) {
 
         if(index == word.length() && root.isWord){
             lt.add(s);
             return;
         }
 
-        ListNode node = root;
+        TrieNode node = root;
         StringBuilder sb = new StringBuilder(s);
         for(int i=index; i<word.length(); i++){
             char letter = Character.toLowerCase(word.charAt(i));
@@ -135,7 +135,7 @@ public class Trie {
                 node = node.next.get(letter);
             } else{
                 // If current path is a '.', try out all words.
-                for(Map.Entry<Character, ListNode> item: node.next.entrySet()){
+                for(Map.Entry<Character, TrieNode> item: node.next.entrySet()){
                     getBlurrySearchResult(item.getValue(), word, i+1, lt, sb.toString() + item.getKey());
                 }
             }
@@ -145,7 +145,7 @@ public class Trie {
     }
 
     public List<String> getAllWordsContainsPrefix(String prefix){
-        ListNode node = this.getNodeContainsPrefix(prefix);
+        TrieNode node = this.getNodeContainsPrefix(prefix);
         if(node == null){
             return new ArrayList<>();
         }
@@ -156,11 +156,11 @@ public class Trie {
         return result;
     }
 
-    private void helper(StringBuilder sb, List<String> result, ListNode node){
+    private void helper(StringBuilder sb, List<String> result, TrieNode node){
         if(node.isWord) {
             result.add(sb.toString());
         }
-        for(Map.Entry<Character, ListNode> item: node.next.entrySet())
+        for(Map.Entry<Character, TrieNode> item: node.next.entrySet())
         {
             sb.append(item.getKey());
             helper(sb, result, item.getValue());
