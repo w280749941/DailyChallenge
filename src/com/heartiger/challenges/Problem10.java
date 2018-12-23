@@ -1,3 +1,5 @@
+package com.heartiger.challenges;
+
 /*
 
 This problem was asked by Twitter.
