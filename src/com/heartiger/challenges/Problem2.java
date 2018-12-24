@@ -52,15 +52,15 @@ public class Problem2 {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5};
         int[] expectedOut = new int[]{120, 60, 40, 30, 24};
-        assert Utility.arrayEqual(expectedOut, productOfNumbers(arr)) : "Failed";
+        assert Utility.intArrayEqual(expectedOut, productOfNumbers(arr)) : "Failed";
 
         int[] arr1 = new int[]{3, 2, 1};
         int[] expectedOut2 = new int[]{2, 3, 6};
-        assert Utility.arrayEqual(expectedOut2, productOfNumbers(arr1)) : "Failed";
+        assert Utility.intArrayEqual(expectedOut2, productOfNumbers(arr1)) : "Failed";
 
-        assert Utility.arrayEqual(expectedOut, productOfNumbersWithoutDivision(arr)) : "Failed";
+        assert Utility.intArrayEqual(expectedOut, productOfNumbersWithoutDivision(arr)) : "Failed";
 
-        assert Utility.arrayEqual(expectedOut2, productOfNumbersWithoutDivision(arr1)) : "Failed";
+        assert Utility.intArrayEqual(expectedOut2, productOfNumbersWithoutDivision(arr1)) : "Failed";
 
         System.out.println("PASSED");
     }

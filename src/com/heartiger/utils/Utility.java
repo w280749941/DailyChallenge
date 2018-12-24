@@ -2,7 +2,7 @@ package com.heartiger.utils;
 
 public class Utility {
 
-    public static boolean arrayEqual(int[] arr, int[] arr2){
+    public static boolean intArrayEqual(int[] arr, int[] arr2){
         if(arr.length != arr2.length){
             return false;
         }
