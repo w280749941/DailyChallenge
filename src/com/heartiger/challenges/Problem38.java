@@ -4,13 +4,14 @@ import java.util.*;
 
 /* 
 
-*/This problem was asked by Amazon.
+This problem was asked by Amazon.
 
 Given a string s and an integer k, break up the string into multiple texts such that each text has a length of k or less. You must break it up so that words don't break across lines. If there's no way to break the text up, then return null.
 
 You can assume that there are no spaces at the ends of the string and that there is exactly one space between each word.
 
 For example, given the string "the quick brown fox jumps over the lazy dog" and k = 10, you should return: ["the quick", "brown fox", "jumps over", "the lazy", "dog"]. No string in the list has a length of more than 10.
+*/
 class Problem38
 {
     List<String> getWords(String text, int len) {
@@ -48,9 +49,9 @@ class Problem38
 		// your code goes here
 		String example = "The quick brown fox jumps over the lazy dog";
 		int len = 10;
-		Problem38 codechef = new Problem38();
-		List<String> result = codechef.getWords(example, len);
-		List<String expected = Arrays.asList("The quick", "brown fox", "jumps over", "the lazy", "dog");
-		assert codechef.sameList(expected, result): "Test 1 Failed";
+		Problem38 problem = new Problem38();
+		List<String> result = problem.getWords(example, len);
+		List<String> expected = Arrays.asList("The quick", "brown fox", "jumps over", "the lazy", "dog");
+		assert problem.sameList(expected, result): "Test 1 Failed";
 	}
 }
