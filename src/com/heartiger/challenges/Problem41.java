@@ -11,6 +11,7 @@ For example, pow(2, 10) should return 1024.
 
 */
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Problem41 {
@@ -37,5 +38,7 @@ public class Problem41 {
         int pow2 = 3;
         int expect2 = 27;
         assert problem.pow(base2, pow2)==expect2: "Test 2 Failed";
+
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(3, Comparator.reverseOrder());
     }
 }
