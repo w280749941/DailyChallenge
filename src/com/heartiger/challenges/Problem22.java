@@ -30,7 +30,10 @@ public class Problem22 {
                 i++;
             }
         }
-        swap(letters,0, lt);
+        if(letters[0] == 'G')
+            swap(letters,0, lt);
+        if(letters[0] == 'B')
+            swap(letters, lt, --gt);
     }
 
     private void swap(char[] letters, int l, int r){
@@ -52,8 +55,8 @@ public class Problem22 {
     }
 
     public static void main(String[] args) {
-        char[] letters = new char[]{'G', 'B', 'R', 'R', 'B', 'R', 'G'};
-        char[] expectedResult = new char[]{'R', 'R', 'R', 'G', 'G', 'B', 'B'};
+        char[] letters = new char[]{'B', 'B', 'R', 'R', 'B', 'R', 'G'};
+        char[] expectedResult = new char[]{'R', 'R', 'R', 'G', 'B', 'B', 'B'};
 
         Problem22 problem = new Problem22();
         problem.threeWaysSort(letters);
