@@ -98,3 +98,81 @@ public class LRU {
         System.out.println("Passed");
     }
 }
+
+/* Recent version.
+class LRUCache {
+
+    static class ListNode{
+        int key;
+        int val;
+        ListNode prev;
+        ListNode next;
+        ListNode(int key, int val){
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+
+    Map<Integer, ListNode> hm;
+    ListNode head;
+    ListNode tail;
+    int cap;
+    public LRUCache(int capacity) {
+        hm = new HashMap<>();
+        head = new ListNode(0, 0);
+        tail = new ListNode(-1, -1);
+        head.next = tail;
+        tail.prev = head;
+        this.cap = capacity;
+    }
+
+    public int get(int key) {
+        if(!hm.containsKey(key)){
+            return -1;
+        }
+
+        ListNode node = hm.get(key);
+        removeNode(node);
+        addNode(node);
+        return node.val;
+    }
+
+    public void put(int key, int value) {
+        if(hm.containsKey(key)){
+            ListNode node = hm.get(key);
+            removeNode(node);
+            node.val = value;
+            addNode(node);
+        } else {
+            if(this.cap == this.hm.size()){
+                removeTail();
+            }
+            ListNode node = new ListNode(key, value);
+            addNode(node);
+        }
+    }
+
+    private void removeNode(ListNode node){
+        ListNode prev = node.prev;
+        ListNode next = node.next;
+        prev.next = next;
+        next.prev = prev;
+        hm.remove(node.key);
+    }
+
+    private void addNode(ListNode node){
+        ListNode next = head.next;
+        head.next = node;
+        node.prev = head;
+        node.next = next;
+        next.prev = node;
+        hm.put(node.key, node);
+    }
+
+    private void removeTail(){
+        ListNode nodeToBeRemoved = tail.prev;
+        removeNode(nodeToBeRemoved);
+    }
+}
+*/
