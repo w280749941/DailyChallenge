@@ -63,7 +63,7 @@ public class Problem43 {
                 {'A', 'N', 'O', 'B'},
                 {'M', 'A', 'S', 'S'}
         };
-        String targetWord = "FOAM";
+        String targetWord = "FABNA";
         String targetWord2 = "MASS";
         String targetWord3 = "ABN";
         String targetWord4 = "NOQ";

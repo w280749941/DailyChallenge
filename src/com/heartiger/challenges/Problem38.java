@@ -25,7 +25,7 @@ class Problem38
             int count = len;
             String temp = words[i];
             i++;
-            while(i < words.length && words[i].length()+temp.length() < 10){
+            while(i < words.length && words[i].length()+temp.length() < len){
                 temp += " " + words[i];
                 i++;
             }

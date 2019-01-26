@@ -29,18 +29,18 @@ public class Problem29 {
             return false;
         else if (sum < nums[index])
             return helper(nums, sum, index-1, result);
-        else {
-            int size = result.size();
-            result.add(nums[index]);
-            if(helper(nums, sum-nums[index], index-1, result)){
-                return true;
-            } else {
-                for(int i= size; i<result.size(); i++){
-                    result.remove(i);
-                }
-                return helper(nums, sum, index-1, result);
+
+        int size = result.size();
+        result.add(nums[index]);
+        if(helper(nums, sum-nums[index], index-1, result)){
+            return true;
+        } else {
+            for(int i= size; i<result.size(); i++){
+                result.remove(i);
             }
+            return helper(nums, sum, index-1, result);
         }
+
     }
 
     boolean equalLists(List<Integer> lt1, List<Integer> lt2){
