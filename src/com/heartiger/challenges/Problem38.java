@@ -35,7 +35,7 @@ class Problem38
         return result;
     }
     
-    boolean sameList(List<String> lt1, List<String> lt2) {
+    protected static <T> boolean sameList(List<T> lt1, List<T> lt2) {
         for(int i=0; i<lt1.size(); i++){
             if(!lt1.get(i).equals(lt2.get(i))){
                 return false;
