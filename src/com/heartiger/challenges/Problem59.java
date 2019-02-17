@@ -17,14 +17,14 @@ public class Problem59{
                 l++;
             } else {
                 if(l <= r){
-                    c++;
+                    count++;
                 } else {
                     r++;
                 }
             }
         }
 
-        return r-l+count;
+        return l-r+count;
     }
 
     public static void main(String[] args) {
