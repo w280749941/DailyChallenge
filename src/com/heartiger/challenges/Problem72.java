@@ -20,7 +20,7 @@ public class Problem72 {
 
         return target == 0;
     }
-gi
+
     public static void main(String[] args) {
         int[] example = new int[]{2, 0, 1, 0};
         boolean expected = true;
