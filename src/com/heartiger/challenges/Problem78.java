@@ -14,7 +14,7 @@ According to the definition of LCA on Wikipedia:
 (where we allow a node to be a descendant of itself).”
 
  */
-public class BinaryTreeLCA {
+public class Problem78 {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null || p == null || q == null)
@@ -66,12 +66,12 @@ public class BinaryTreeLCA {
     }
 
     public static void main(String[] args) {
-        BinaryTreeLCA binaryTreeLCA = new BinaryTreeLCA();
+        Problem78 problem78 = new Problem78();
         TreeNode p = new TreeNode(5, new TreeNode(6), new TreeNode(2, new TreeNode(7), new TreeNode(4)));
         TreeNode q = new TreeNode(1, new TreeNode(0), new TreeNode(8));
         TreeNode root = new TreeNode(3, p, q);
-        assert binaryTreeLCA.lowestCommonAncestor(root, p, q).val == 3: "Test 1 Failed";
-        assert binaryTreeLCA.lowestCommonAncestorRecursive(root, p, q).val == 3: "Test 2 Failed";
+        assert problem78.lowestCommonAncestor(root, p, q).val == 3: "Test 1 Failed";
+        assert problem78.lowestCommonAncestorRecursive(root, p, q).val == 3: "Test 2 Failed";
     }
 
 }
