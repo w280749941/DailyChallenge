@@ -1,7 +1,5 @@
 package com.heartiger.challenges;
 
-import com.heartiger.utils.Utility;
-
 /*
 Good morning! Here's your coding interview problem for today.
 
@@ -44,7 +42,7 @@ public class Problem77 {
         return new String(wordArrays);
     }
 
-    private void reverseArray(char[] wordArrays, int l, int r) {
+    public static void reverseArray(char[] wordArrays, int l, int r) {
         while(l < r){
             char temp = wordArrays[l];
             wordArrays[l] = wordArrays[r];
