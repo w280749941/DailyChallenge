@@ -77,7 +77,7 @@ public class Problem70 {
         assert sameArray(problem.getNums(example2), expected2): "Test 2 Failed";
     }
 
-    private static boolean sameArray(int[] nums, int[] expected) {
+    protected static boolean sameArray(int[] nums, int[] expected) {
         for(int i=0; i<nums.length; i++){
             if(nums[i] != expected[i])
                 return false;
