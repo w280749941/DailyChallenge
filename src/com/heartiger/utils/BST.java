@@ -25,7 +25,7 @@ public class BST<T extends Comparable<T>> {
         return this.root;
     }
 
-    // Complexity O(logn)
+    // Complexity O(logN)
     private TreeNode add(TreeNode<T> node, T item) {
         if (node == null){
             size++;
