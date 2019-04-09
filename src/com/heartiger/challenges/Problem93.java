@@ -1,6 +1,6 @@
 package com.heartiger.challenges;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
+import java.security.InvalidParameterException;
 
 /*
 This problem was asked by Amazon.
@@ -21,11 +21,11 @@ public class Problem93 {
             array = new boolean[size];
         }
 
-        void set(int i, int val) throws InvalidArgumentException {
+        void set(int i, int val) throws InvalidParameterException {
             if(i < 0 || i >= array.length)
                 throw new IndexOutOfBoundsException();
             if(val < 0 || val > 1)
-                throw new InvalidArgumentException(new String[]{"Value can only be 0 or 1"});
+                throw new InvalidParameterException("Value can only be 0 or 1");
             array[i] = val == 1;
         }
 
@@ -36,7 +36,7 @@ public class Problem93 {
         }
     }
 
-    public static void main(String[] args) throws InvalidArgumentException {
+    public static void main(String[] args) throws InvalidParameterException {
         BitArray bitArray = new BitArray(5);
         bitArray.set(2, 1);
         bitArray.set(4, 1);
